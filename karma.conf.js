@@ -41,6 +41,6 @@ module.exports = function (config) {
     autoWatch: true,
     autoWatchBatchDelay: 1000,
     browsers: [ /*'Chrome',*/ 'PhantomJS'],
-    singleRun: true
+    singleRun: !localRun
   });
 };
