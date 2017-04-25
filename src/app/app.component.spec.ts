@@ -7,16 +7,18 @@ import { AppComponent } from './app.component';
 describe('AppComponent', () => {
   let debugElement: DebugElement;
   let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [AppComponent],
-    }).compileComponents();
-
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    component = fixture.nativeElement;
-    debugElement = fixture.debugElement;
+    }).compileComponents()
+      .then(() => {
+        fixture = TestBed.createComponent(AppComponent);
+        fixture.detectChanges();
+        component = fixture.nativeElement;
+        debugElement = fixture.debugElement;
+      });
   }));
 
   it('should create the app', async(() => {
@@ -37,6 +39,9 @@ describe('AppComponent', () => {
       .find(it => it.nativeElement.textContent === 'New');
 
     expect(button).toBeTruthy();
+
+    button.nativeElement.click();
+
   }));
 
   it('should render button Open', async(() => {
