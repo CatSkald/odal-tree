@@ -1,6 +1,9 @@
 # OdalTree
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/CatSkald/Roguelike/master/LICENSE)
+[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/krgpuvllw4d39068?svg=true)](https://ci.appveyor.com/project/CatSkald/odal-tree)
+[![Travis CI build status](https://api.travis-ci.org/CatSkald/odal-tree.svg?branch=master)](https://ci.appveyor.com/project/CatSkald/odal-tree)
+
 
 ## Development server
 
