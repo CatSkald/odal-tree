@@ -1,4 +1,4 @@
 language: node_js
 node_js:
   - "node"
-script: npm test --single-run
+script: ./node_modules/karma/bin/karma start karma.conf.js --single-run
