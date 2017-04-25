@@ -1,5 +1,6 @@
 // Karma configuration file, see link for more information
 // https://karma-runner.github.io/0.13/config/configuration-file.html
+var localRun = !process.env.TRAVIS && !process.env.APPVEYOR;
 
 module.exports = function (config) {
   config.set({
@@ -37,8 +38,9 @@ module.exports = function (config) {
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
-    autoWatch: true,
+    autoWatch: localRun,
+    autoWatchBatchDelay: 1000,
     browsers: [ /*'Chrome',*/ 'PhantomJS'],
-    singleRun: true
+    singleRun: !localRun
   });
 };
