@@ -38,7 +38,7 @@ module.exports = function (config) {
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
-    autoWatch: localRun,
+    autoWatch: true,
     autoWatchBatchDelay: 1000,
     browsers: [ /*'Chrome',*/ 'PhantomJS'],
     singleRun: !localRun
