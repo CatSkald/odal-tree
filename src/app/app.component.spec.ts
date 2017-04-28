@@ -1,6 +1,8 @@
 import { Router } from '@angular/router';
 import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core/core';
+import { Location, CommonModule } from '@angular/common';
+import { DebugElement } from '@angular/core';
+import { RouterTestingModule } from '@angular/router/testing';
 import { async, ComponentFixture, inject, TestBed } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
@@ -12,13 +14,10 @@ describe('AppComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [AppComponent],
-      providers: [
-        {
-          provide: Router,
-          useValue: { navigate: jasmine.createSpy('navigate') }
-        }
-      ]
+      imports: [
+        RouterTestingModule.withRoutes([])
+      ],
+      declarations: [AppComponent]
     }).compileComponents()
       .then(() => {
         fixture = TestBed.createComponent(AppComponent);
@@ -41,15 +40,22 @@ describe('AppComponent', () => {
       .toContain('Welcome to Odal Tree!');
   }));
 
-  it('should render button New', async(inject([Router], (router: Router) => {
-    const button = debugElement.queryAll(By.css('button'))
-      .find(it => it.nativeElement.textContent === 'New');
+  it('should render button New', async(inject([Router, Location],
+    (router: Router, location: Location) => {
+      const button = debugElement.queryAll(By.css('button'))
+        .find(it => it.nativeElement.textContent === 'New');
 
-    expect(button).toBeTruthy();
+      expect(button).toBeTruthy();
 
-    button.nativeElement.click();
-    expect(router.navigate).toHaveBeenCalledWith(['/tree']);
-  })));
+      const navigateSpy = spyOn(router, 'navigate');
+
+      button.nativeElement.click();
+      fixture.whenStable().then(() => {
+        // todo remove this later
+        // expect(location.path()).toEqual('/tree');
+        expect(navigateSpy).toHaveBeenCalledWith(['/tree']);
+      });
+    })));
 
   it('should render button Open', async(() => {
     const button = debugElement.queryAll(By.css('button'))
