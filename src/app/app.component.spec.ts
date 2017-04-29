@@ -39,28 +39,4 @@ describe('AppComponent', () => {
     expect(debugElement.nativeElement.querySelector('h1').textContent)
       .toContain('Welcome to Odal Tree!');
   }));
-
-  it('should render button New', async(inject([Router, Location],
-    (router: Router, location: Location) => {
-      const button = debugElement.queryAll(By.css('button'))
-        .find(it => it.nativeElement.textContent === 'New');
-
-      expect(button).toBeTruthy();
-
-      const navigateSpy = spyOn(router, 'navigate');
-
-      button.nativeElement.click();
-      fixture.whenStable().then(() => {
-        // todo remove this later
-        // expect(location.path()).toEqual('/tree');
-        expect(navigateSpy).toHaveBeenCalledWith(['/tree']);
-      });
-    })));
-
-  it('should render button Open', async(() => {
-    const button = debugElement.queryAll(By.css('button'))
-      .find(it => it.nativeElement.textContent === 'Open');
-
-    expect(button).toBeTruthy();
-  }));
 });
