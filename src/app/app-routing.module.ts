@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { TreeComponent } from './tree/tree.component';
+import { TreeLoaderComponent } from './tree-loader/tree-loader.component';
 
 const routes: Routes = [
   {
@@ -11,7 +11,7 @@ const routes: Routes = [
   },
   {
     path: 'tree',
-    component: TreeComponent
+    component: TreeLoaderComponent
   }
 ];
 

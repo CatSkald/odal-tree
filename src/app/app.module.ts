@@ -6,11 +6,13 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { TreeComponent } from './tree/tree.component';
+import { TreeLoaderComponent } from './tree-loader/tree-loader.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TreeComponent
+    TreeComponent,
+    TreeLoaderComponent
   ],
   imports: [
     AppRoutingModule,
