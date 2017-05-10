@@ -22,7 +22,9 @@
     "@angular/router": "^4.1.0",
     "core-js": "^2.4.1",
     "cytoscape": "^3.0.0",
+    "ng2-vis": "0.0.6",
     "rxjs": "^5.3.0",
+    "vis": "^4.19.1",
     "zone.js": "^0.8.9"
   },
   "devDependencies": {
