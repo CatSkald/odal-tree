@@ -1,6 +1,3 @@
-import { Router } from '@angular/router';
-import { By } from '@angular/platform-browser';
-import { Location, CommonModule } from '@angular/common';
 import { DebugElement } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
 import { async, ComponentFixture, inject, TestBed } from '@angular/core/testing';

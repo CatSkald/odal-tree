@@ -2,11 +2,15 @@
 
 <button (click)="openNewTree()">New</button>
 <button (click)="file.click()">Open</button>
-<input type="file" accept=".json" style="display:none" (change)="uploadFile($event)" #file>
+<input type="file"
+       accept=".json"
+       style="display:none"
+       (change)="uploadFile($event)"
+       #file>
 
-<br/>
+<br />
 <app-tree></app-tree>
-<br/>
-<br/>
-<br/>
+<br />
+<br />
+<br />
 <textarea>{{fileContent}}</textarea>

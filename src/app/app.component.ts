@@ -1,9 +1,10 @@
-import { Router } from '@angular/router';
 import { Component } from '@angular/core';
+
+declare const require: any
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  template: require('./app.component.html'),
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {

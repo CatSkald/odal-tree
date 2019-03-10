@@ -16,7 +16,7 @@ declare const require: any
 
 @Component({
   selector: 'app-tree',
-  templateUrl: './tree.component.html',
+  template: require('./tree.component.html'),
   styleUrls: ['./tree.component.css']
 })
 export class TreeComponent implements OnInit, OnDestroy {

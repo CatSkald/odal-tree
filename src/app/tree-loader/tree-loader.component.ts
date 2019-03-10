@@ -3,9 +3,11 @@ import { Component, OnInit } from '@angular/core';
 
 import { TreeComponent } from '../tree/tree.component';
 
+declare const require: any
+
 @Component({
   selector: 'app-tree-loader',
-  templateUrl: './tree-loader.component.html',
+  template: require('./tree-loader.component.html'),
   styleUrls: ['./tree-loader.component.css']
 })
 export class TreeLoaderComponent implements OnInit {
